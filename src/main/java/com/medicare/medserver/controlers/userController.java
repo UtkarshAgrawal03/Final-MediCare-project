@@ -38,12 +38,12 @@ public class userController {
 		User u=us.createUser(user);
 		return u;
 	}
-//	@GetMapping("/{username}")
-//	@CrossOrigin(origins = "http://localhost:3000")
-//	@ResponseBody
-//	public User View(@PathVariable String username) {
-//		return us.getUser(username);
-//	}
+	@GetMapping("/")
+	@CrossOrigin("*")
+	@ResponseBody
+	public String View() {
+		return "Hello ,Welcome to Medicare Backend";
+	}
 	@GetMapping("/getAll/{offset}/{size}")
 	@CrossOrigin
 	public Page<Medicines> getAll(@PathVariable("offset") int o,@PathVariable("size") int s){

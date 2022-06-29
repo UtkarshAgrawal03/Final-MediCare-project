@@ -39,7 +39,7 @@ public class AppsecurityConfig extends WebSecurityConfigurerAdapter{
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		http.authorizeRequests()
-		.antMatchers("/generate-token","/signup","/med","/getAll/{offset}/{size}").permitAll()
+		.antMatchers("/generate-token","/signup","/med","/getAll/{offset}/{size}","/").permitAll()
 		.antMatchers(HttpMethod.OPTIONS).permitAll()
 		.anyRequest().authenticated()
 		
